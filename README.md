@@ -1,14 +1,10 @@
-# tax-client
-
-> An electron-vue project
-
-## 构建
+## 开始使用
 
 ``` bash
-# serve with hot reload at localhost:8000
+# 执行如下命令后访问  localhost:8000
 npm run dev
 
-# build electron app for production
+# 编译
 npm run build
 ```
 
