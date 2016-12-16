@@ -1,8 +1,13 @@
 {
-  "name": "A Vue Project",
+  "name": "my-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "My Vue Project",
   "author": "Jony Zhang <niceue@live.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://git.coding.net/niceue/vue-project.git"
+  },
   "scripts": {
     "dev": "node tasks/run-dev.js",
     "build": "node tasks/run-build.js",
@@ -36,6 +41,7 @@
     "html-webpack-plugin": "^2.24.0",
     "http-proxy-middleware": "^0.17.3",
     "json-loader": "^0.5.4",
+    "opn": "^4.0.2",
     "postcss-flexbox": "^1.0.2",
     "postcss-remify": "^1.0.1",
     "poststylus": "^0.2.3",

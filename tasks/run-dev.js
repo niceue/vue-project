@@ -4,18 +4,31 @@ var path = require('path')
 var config = require('./config')
 var webpack = require('webpack')
 var webpackConfig = require('./webpack.dev.conf')
+var opn = require('opn')
+var port = config.dev.port || 8000
 
-runServer()
+runServer(() => {
+  var uri = `http://localhost:${port}`
+  console.log(`\nListening at ${uri}\n`)
+  opn(uri)
+})
 
-function runServer() {
+function runServer(callback) {
   var proxyTable = config.dev.proxyTable || {}
   var express = require('express')
   var proxy = require('http-proxy-middleware')
   var ProgressBarPlugin = require('progress-bar-webpack-plugin')
   var chalk = require('chalk')
+  var hasCallback = false
 
   var ProgressBar = new ProgressBarPlugin({
-        format: chalk.bold('[') + ':bar' + chalk.bold(']') + chalk.green.bold(' :percent ') + '(:msg)'
+        format: chalk.bold('[') + ':bar' + chalk.bold(']') + chalk.green.bold(' :percent ') + '(:msg)',
+        callback: () => {
+          if (callback && !hasCallback) {
+            setTimeout(callback, 0)
+            hasCallback = true
+          }
+        }
       })
 
   webpackConfig.plugins.unshift(ProgressBar, new webpack.HotModuleReplacementPlugin())
@@ -65,5 +78,10 @@ function runServer() {
   // compilation error display
   app.use(hotMiddleware)
   app.use(config.prod.publicPath, express.static('./'))
-  app.listen(config.dev.port || 8000)
+  app.listen(port, err => {
+    if (err) {
+      console.log(err)
+      return
+    }
+  })
 }
