@@ -20,8 +20,6 @@ for (let id in components) {
   Vue.component(id.slice(0, 3) === 'App' ? id : 'V' + id, components[id])
 }
 
-console.log(1234)
-
 // 添加实例方法
 Object.assign(Vue.prototype, {
   // 转换观察对象为单纯对象

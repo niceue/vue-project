@@ -19,7 +19,7 @@ module.exports = {
     publicPath: config.prod.publicPath,
     filename: '[name].js'
   },
-  target: 'electron-renderer',
+  target: 'web',
   // externals: ['element-ui'],
   resolve: {
     extensions: ['', '.js', '.vue'],

@@ -1,5 +1,5 @@
 <template>
-<hello-world></hello-world>
+<v-hello-world></v-hello-world>
 </template>
 
 <script>

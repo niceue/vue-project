@@ -1,4 +1,3 @@
-
 module.exports = function (options) {
   options = options || {}
   // generate loader string to be used with extract text plugin
