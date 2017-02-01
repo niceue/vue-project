@@ -11,10 +11,10 @@ npm run build
 ---
 
 ## 相关文档
-- [ECMAScript 6入门](http://es6.ruanyifeng.com/) `重点了解 modules`
-- [vue](http://cn.vuejs.org/) `重点了解 vue 组件`
-- [vue-router](http://router.vuejs.org/zh-cn/basic.html) `路由`
-- [vue-resource](https://github.com/vuejs/vue-resource) `http 请求`
+- [ECMAScript 6入门](http://es6.ruanyifeng.com/)
+- [vue](http://cn.vuejs.org/)
+- [vue-router](http://router.vuejs.org/zh-cn/basic.html)
+- [vue-resource](https://github.com/vuejs/vue-resource) `http 请求库`
 - [postcss-flexbox](https://github.com/archana-s/postcss-flexbox) `flexbox 插件`
 - [stylus](https://github.com/stylus/stylus) `css 预处理器`
 

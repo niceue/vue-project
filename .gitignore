@@ -1,7 +1,20 @@
+### OSX
 .DS_Store
-dist
+
+### Node
 node_modules
+logs
 *.log
-*.log.*
-thumbs.db
+npm-debug.log*
+
+### SublimeText
+.sublime-workspace
+*.sublime-project
+
+### IntelliJ IDEA
+.idea/
+
+### Other
+dist/
+*.bak
 !.gitkeep
