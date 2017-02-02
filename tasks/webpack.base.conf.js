@@ -1,9 +1,11 @@
 var path = require('path')
+var webpack = require('webpack')
 var cssLoaders = require('./css-loaders')
 var projectRoot = path.resolve(__dirname, '../')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var config = require('./config')
 var devPath = config.dev.devPath
+var isProd = process.env.NODE_ENV === 'production'
 
 var poststylus = require('poststylus')
 var flexbox = require('postcss-flexbox')()
@@ -22,10 +24,9 @@ module.exports = {
   target: 'web',
   // externals: ['element-ui'],
   resolve: {
-    extensions: ['', '.js', '.vue'],
-    fallback: [path.resolve(projectRoot, 'node_modules')],
+    extensions: ['.js', '.vue'],
+    modules: [path.resolve(projectRoot, 'src'), 'node_modules'],
     alias: {
-      // 'vue': 'vue/dist/vue',
       'assets': path.resolve(devPath, 'assets'),
       'components': path.resolve(devPath, 'components'),
       'config': path.resolve(devPath, 'config'),
@@ -34,42 +35,25 @@ module.exports = {
       'views': path.resolve(devPath, 'views')
     }
   },
-  resolveLoader: {
-    fallback: [path.resolve(projectRoot, 'node_modules')]
-  },
   module: {
-    preLoaders: [
+    rules: [
       {
         test: /\.vue$/,
-        loader: 'eslint',
-        include: projectRoot,
+        use: [
+          'vue-loader',
+          'eslint-loader'
+        ],
+        include: path.resolve(projectRoot, 'src'),
         exclude: /node_modules/
       },
       {
         test: /\.js$/,
-        loader: 'eslint',
-        include: projectRoot,
+        use: [
+          'babel-loader?cacheDirectory',
+          'eslint-loader'
+        ],
+        include: path.resolve(projectRoot, 'src'),
         exclude: /node_modules/
-      }
-    ],
-    loaders: [
-      {
-        test: /\.vue$/,
-        loader: 'vue'
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel',
-        include: projectRoot,
-        exclude: /node_modules/
-      },
-      {
-        test: /\.json$/,
-        loader: 'json'
-      },
-      {
-        test: /\.html$/,
-        loader: 'vue-html'
       },
       {
         test: /\.(png|jpg|gif|svg|ttf|woff2?|eot)(\?.*)?$/,
@@ -81,20 +65,31 @@ module.exports = {
       }
     ]
   },
-  stylus: {
-    use: [
-      poststylus([flexbox, remify, autoprefixer])
-    ],
-    set: {
-      paths: [devPath]
-    }
-  },
-  vue: {
-    loaders: cssLoaders({vue: true}),
-    postcss: [flexbox, remify, autoprefixer],
-    autoprefixer: false
-  },
-  eslint: {
-    formatter: require('eslint-friendly-formatter')
-  }
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      minimize: isProd,
+      options: {
+        stylus: {
+          use: [
+            poststylus([flexbox, remify, autoprefixer])
+          ],
+          set: {
+            paths: [devPath]
+          }
+        },
+        vue: {
+          loaders: cssLoaders({
+            sourceMap: isProd && config.prod.sourceMap,
+            // extract: false,
+            vue: true
+          }),
+          postcss: [flexbox, remify, autoprefixer],
+          autoprefixer: false
+        },
+        eslint: {
+          formatter: require('eslint-friendly-formatter')
+        }
+      }
+    })
+  ]
 }

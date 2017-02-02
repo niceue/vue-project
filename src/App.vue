@@ -9,5 +9,5 @@ export default {
 </script>
 
 <style lang="stylus">
-@require 'lib/stylus/'
+@require '../lib/stylus/'
 </style>

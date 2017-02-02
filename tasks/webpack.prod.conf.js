@@ -17,16 +17,9 @@ module.exports = merge(baseWebpackConfig, {
     chunkFilename: 'js/[id].[chunkhash].js'
   },
   module: {
-    loaders: cssLoaders({
+    rules: cssLoaders({
       sourceMap: config.prod.sourceMap,
       extract: true
-    })
-  },
-  vue: {
-    loaders: cssLoaders({
-      sourceMap: config.prod.sourceMap,
-      extract: true,
-      vue: true
     })
   },
   plugins: [
@@ -37,11 +30,14 @@ module.exports = merge(baseWebpackConfig, {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
+      beautify: false,
+      comments: false,
       compress: {
+        collapse_vars: true,
+        reduce_vars: true,
         warnings: false
       }
     }),
-    new webpack.optimize.OccurenceOrderPlugin(),
     // extract css into its own file
     new ExtractTextPlugin('css/[name].[contenthash:20].css'),
     // generate dist index.html with correct asset hash for caching.

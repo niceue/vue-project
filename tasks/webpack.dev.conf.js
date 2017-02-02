@@ -15,7 +15,7 @@ module.exports = merge(baseWebpackConfig, {
     publicPath: '/'
   },
   module: {
-    loaders: cssLoaders()
+    rules: cssLoaders()
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -23,9 +23,7 @@ module.exports = merge(baseWebpackConfig, {
         NODE_ENV: '"development"'
       }
     }),
-    // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: 'index.html',
