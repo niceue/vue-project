@@ -1,3 +1,17 @@
+## 关于
+这是自用的 vue2.0 项目的脚手架，集成（使用）以下技术：
+- [webpack2.0](https://webpack.js.org/)
+- [eslint](http://eslint.org/)
+- [babel](http://babeljs.io/)
+- [vue2.0](http://cn.vuejs.org/)
+- [vuex2.0](https://vuex.vuejs.org/zh-cn/)
+- [vue-router2.0](http://router.vuejs.org/zh-cn/)
+- [vue-resource](https://github.com/vuejs/vue-resource)
+- [stylus](https://github.com/stylus/stylus)
+- [autoprefixer](https://github.com/postcss/autoprefixer)
+- [postcss-flexbox](https://github.com/archana-s/postcss-flexbox)
+- [postcss-remify](https://github.com/OakMX/postcss-remify)
+
 ## 开始使用
 
 ``` bash
@@ -12,14 +26,6 @@ npm run build
 ```
 
 ---
-
-## 相关文档
-- [ECMAScript 6入门](http://es6.ruanyifeng.com/)
-- [vue](http://cn.vuejs.org/)
-- [vue-router](http://router.vuejs.org/zh-cn/basic.html)
-- [vue-resource](https://github.com/vuejs/vue-resource) `http 请求库`
-- [postcss-flexbox](https://github.com/archana-s/postcss-flexbox) `flexbox 插件`
-- [stylus](https://github.com/stylus/stylus) `css 预处理器`
 
 <br>
 ## 快速参考文档
