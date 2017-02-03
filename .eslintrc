@@ -1,0 +1,21 @@
+{
+  "root": true,
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": "standard",
+  "plugins": ["html"],
+  "rules": {
+    "arrow-parens": 0,
+    "generator-star-spacing": 0,
+    "no-useless-escape": 0,
+    "no-debugger": 0,
+    "space-before-function-paren": [0, "always"],
+    "no-mixed-spaces-and-tabs": 2,
+    "brace-style": [0, "stroustrup"]
+  }
+}
