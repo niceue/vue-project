@@ -1,11 +1,11 @@
 ## 关于
 这是自用的 vue2.0 项目的脚手架，集成（使用）以下技术：
-- [webpack2.0](https://webpack.js.org/)
+- [webpack 2.0](https://webpack.js.org/)
 - [eslint](http://eslint.org/)
 - [babel](http://babeljs.io/)
-- [vue2.0](http://cn.vuejs.org/)
-- [vuex2.0](https://vuex.vuejs.org/zh-cn/)
-- [vue-router2.0](http://router.vuejs.org/zh-cn/)
+- [vue 2.0](http://cn.vuejs.org/)
+- [vuex 2.0](https://vuex.vuejs.org/zh-cn/)
+- [vue-router 2.0](http://router.vuejs.org/zh-cn/)
 - [vue-resource](https://github.com/vuejs/vue-resource)
 - [stylus](https://github.com/stylus/stylus)
 - [autoprefixer](https://github.com/postcss/autoprefixer)
