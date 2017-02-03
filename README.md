@@ -1,6 +1,9 @@
 ## 开始使用
 
 ``` bash
+# 安装依赖
+yarn || npm i
+
 # 执行如下命令后访问  localhost:8000
 npm run dev
 
