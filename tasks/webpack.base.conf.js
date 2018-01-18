@@ -22,7 +22,6 @@ module.exports = {
     filename: '[name].js'
   },
   target: 'web',
-  // externals: ['element-ui'],
   resolve: {
     extensions: ['.js', '.vue'],
     modules: [path.resolve(projectRoot, 'src'), 'node_modules'],
@@ -82,9 +81,7 @@ module.exports = {
             sourceMap: isProd && config.prod.sourceMap,
             // extract: false,
             vue: true
-          }),
-          postcss: [flexbox, remify, autoprefixer],
-          autoprefixer: false
+          })
         },
         eslint: {
           formatter: require('eslint-friendly-formatter')

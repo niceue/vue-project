@@ -1,5 +1,8 @@
+import Index from 'views/index'
+import Login from 'views/login'
+
 export default [
   {path: '/', redirect: '/index'},
-  {path: '/index', component: require('views/index')},
-  {path: '/login', component: require('views/login')}
+  {path: '/index', component: Index},
+  {path: '/login', component: Login}
 ]

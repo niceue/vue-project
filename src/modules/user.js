@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import http from 'lib/http'
 import {
   USER_LOGIN,
   USER_LOGOUT
@@ -25,23 +25,23 @@ export default {
 
   actions: {
     login ({ commit, state }, params) {
-      return Vue.http.post('/user/login', {params: params})
+      return http.post('/user/login', {params})
         .then((res) => {
           let d = res.data
           if (d.code === 200) {
             commit(USER_LOGIN, d.data)
           }
-          return res.json()
+          return d
         })
     },
     logout ({ commit, state }) {
-      return Vue.http.get('/user/logout')
+      return http.get('/user/logout')
         .then((res) => {
           let d = res.data
           if (d.code === 200) {
             commit(USER_LOGOUT, d.data)
           }
-          return res.json()
+          return d
         })
     },
     captcha ({ commit }) {

@@ -12,20 +12,17 @@
 .absolute {position: absolute}
 
 // 伸缩盒
-.flexbox {box: horizontal middle space-between}
-.flexbox-vertical {box: vertical middle}
-.flexbox-center {box: center}
-.flexbox-right {box: right}
+.box-horizontal {box: horizontal middle space-between}
+.box-vertical {box: vertical middle}
+.box-center {box: center}
+.box-right {box: right}
 // 伸缩盒子元素
 .flex {box-item: flex-auto}
-.flex-none {box-item: flex-none}
-.flex-stretch {box-item: middle stretch}
-.flex-left {box-item: flex-left}
-.flex-right {box-item: flex-right}
 .flex-1 {box-item: flex-1}
-.flex-2 {box-item: flex-2}
-.flex-3 {box-item: flex-3}
-.flex-4 {box-item: flex-4}
+.flex-none {box-item: flex-none}
+.box-item-stretch {box-item: middle stretch}
+.box-item-left {box-item: flex-left}
+.box-item-right {box-item: flex-right}
 
 // 内边距
 .pl10, .pl-base {padding-left: rem(10)}
@@ -109,15 +106,6 @@
 //字体普通化
 .normal {font-weight: normal; font-style: normal; font-size: 1rem; text-decoration: none;}
 
-// 浮动
-.fl {float: left;}
-.fr {float: right;}
-
-// 清除浮动
-.clearfix {
-  clearfix()
-}
-
 // 隐藏超出的文字
 .ellipsis {
   ellipsis()
@@ -140,6 +128,3 @@
 
 // 隐藏
 .hide,.hidden {display: none !important; visibility: hidden !important;}
-
-// 隐藏文本
-.hide-text {font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0}

@@ -1,7 +1,5 @@
 // https://github.com/shelljs/shelljs
 require('shelljs/global')
-process.env.NODE_ENV = 'production'
-
 var webpack = require('webpack')
 var webpackConfig = require('./webpack.prod.conf')
 var config = require('./config')

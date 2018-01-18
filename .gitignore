@@ -1,20 +1,22 @@
-### OSX
 .DS_Store
-
-### Node
-node_modules
-logs
-*.log
+node_modules/
+dist/
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-### SublimeText
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
 .sublime-workspace
 *.sublime-project
 
-### IntelliJ IDEA
-.idea/
-
 ### Other
+.cache/
 dist/
 *.bak
 !.gitkeep

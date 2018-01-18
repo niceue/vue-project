@@ -9,7 +9,6 @@ var config = require('./config')
 
 module.exports = merge(baseWebpackConfig, {
   devtool: config.prod.sourceMap ? '#source-map' : false,
-  profile: true,
   output: {
     // naming output files with hashes for better caching.
     // dist/index.html will be auto-generated with correct URLs.
