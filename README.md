@@ -1,23 +1,19 @@
 ## 关于
 这是自用的 vue2.0 项目的脚手架，集成（使用）以下技术：
-- [webpack 2.0](https://webpack.js.org/)
-- [eslint](http://eslint.org/)
-- [babel](http://babeljs.io/)
-- [vue 2.0](http://cn.vuejs.org/)
-- [vuex 2.0](https://vuex.vuejs.org/zh-cn/)
-- [vue-router 2.0](http://router.vuejs.org/zh-cn/)
-- [vue-resource](https://github.com/vuejs/vue-resource)
+- [webpack 3.0](https://webpack.js.org/)
+- [eslint 4.0](http://eslint.org/)
+- [vue 2.5+](http://cn.vuejs.org/)
+- [vuex 3.0](https://vuex.vuejs.org/zh-cn/)
+- [vue-router 3.0](http://router.vuejs.org/zh-cn/)
+- [axios](https://github.com/axios/axios)
 - [stylus](https://github.com/stylus/stylus)
 - [autoprefixer](https://github.com/postcss/autoprefixer)
 - [postcss-flexbox](https://github.com/archana-s/postcss-flexbox)
 - [postcss-remify](https://github.com/OakMX/postcss-remify)
 
 ## 开始使用
-
+全局安装`yarn`
 ``` bash
-# 安装依赖
-yarn || npm i
-
 # 执行如下命令后访问  localhost:8000
 npm run dev
 
