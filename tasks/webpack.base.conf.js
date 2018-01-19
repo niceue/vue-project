@@ -10,7 +10,7 @@ var isProd = process.env.NODE_ENV === 'production'
 var poststylus = require('poststylus')
 var flexbox = require('postcss-flexbox')()
 var remify = require('postcss-remify')({base:16})
-var autoprefixer = require('autoprefixer')({browsers: config.browsers, flexbox: 'no-2012'})
+var autoprefixer = require('autoprefixer')({flexbox: 'no-2012'})
 
 module.exports = {
   entry: {
@@ -24,7 +24,7 @@ module.exports = {
   target: 'web',
   resolve: {
     extensions: ['.js', '.vue'],
-    modules: [path.resolve(projectRoot, 'src'), 'node_modules'],
+    modules: [devPath, 'node_modules'],
     alias: {
       'assets': path.resolve(devPath, 'assets'),
       'components': path.resolve(devPath, 'components'),

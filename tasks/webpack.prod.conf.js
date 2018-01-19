@@ -43,8 +43,7 @@ module.exports = merge(baseWebpackConfig, {
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: path.resolve(config.dev.devPath, 'index.html'),
+      template: 'index.html',
       inject: true,
       minify: {
         removeComments: true,
